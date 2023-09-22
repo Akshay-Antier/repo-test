@@ -5,10 +5,10 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - REPOSITORY_NAME=node-app-demo01
-      - REPOSITORY_URI=746590608925.dkr.ecr.ap-southeast-2.amazonaws.com/$REPOSITORY_NAME
+      - REPOSITORY_NAME=stage-demo-ecr
+      - REPOSITORY_URI=770594577260.dkr.ecr.us-east-1.amazonaws.com/$REPOSITORY_NAME
       # - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
-      - aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin $REPOSITORY_URI
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $REPOSITORY_URI
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
