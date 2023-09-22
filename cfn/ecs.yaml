@@ -19,7 +19,7 @@ Parameters:
 
   RepositoryUri:
     Type: String
-    Default: 746590608925.dkr.ecr.ap-southeast-2.amazonaws.com/node-app-demo01
+    Default: 770594577260.dkr.ecr.us-east-1.amazonaws.com/stage-demo-ecr
 
   ImageVersion:
     Type: String
